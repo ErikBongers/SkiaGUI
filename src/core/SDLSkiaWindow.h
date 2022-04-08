@@ -25,7 +25,7 @@ class WindowClient
         void draw();
     public:
         SDLSkiaWindow* getWindow() { return window; }
-        void onIdle() {}
+        virtual void onIdle() {}
         virtual void initialize() {}
         void mouseMoved(SDL_MouseMotionEvent& event);
         void mouseDown(SDL_MouseButtonEvent& event);

@@ -1,1 +1,2 @@
-* create a separate git repo, also on github.
+* Currently SplittableView is required, but what if we don't need a split?
+  > separate base class SizeableView?
