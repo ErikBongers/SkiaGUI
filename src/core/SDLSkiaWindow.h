@@ -74,6 +74,9 @@ class SDLSkiaWindow
         //static int onEventsReceived(void* userdata, SDL_Event* event);
         std::set<UIArea*> mouseCaptures;
         SplittableArea* rootView = nullptr;
+        bool fpsDraw = true;
+        SkPoint fpsAt = {0, 0};
+        SkColor fpsColor = SK_ColorBLACK;
     public:
         SDLSkiaWindow(WindowClient& client);
         SDL_Window* createWindow(const char* title, int width, int height, int stencilBits, int msaaSampleCount, SkColor bkgColor);
@@ -97,5 +100,7 @@ class SDLSkiaWindow
         std::chrono::time_point<std::chrono::steady_clock> toolTipRequestTime;
         std::chrono::time_point<std::chrono::steady_clock> toolTipLeaveTime;
         bool showToolTip = false;
+        void drawFps(bool draw) { fpsDraw = draw; }
+        void drawFps(SkPoint at, SkColor color) { fpsDraw = true; fpsAt = at; fpsColor = color; }
     };
 
