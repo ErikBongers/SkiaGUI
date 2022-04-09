@@ -326,6 +326,7 @@ void SDLSkiaWindow::onIdle()
                 }
             }
         }
+    client.onIdle();
     client.getMainView()->trickleIdle(); 
     }
 

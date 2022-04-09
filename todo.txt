@@ -1,2 +1,8 @@
 * Currently SplittableView is required, but what if we don't need a split?
   > separate base class SizeableView?
+
+* Rename events in API. Not clear what should be overridden and what is at user's disposal.
+  > Register events? Overkill?
+  > Make virtual functions and call parent?
+    > more primitive, but simpler
+    > for onIdle() this is
