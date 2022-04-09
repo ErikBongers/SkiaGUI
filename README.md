@@ -28,13 +28,16 @@ class MyWindowClient : public WindowClient
     private:
         SplittableArea mainView;
         UIElement toolbar;
-        UIElement button1;
+        UIElement *button1;
         ...
     public:
-        void initialize() override;
+        void initialize() override; //create the mainView and other visual components and setup the hierarchy.
         SplittableArea* getMainView() override { return &mainView; } //only required override. The Window must know the top of the visual's hierarchy.
         on...someEvent(); //note that these are NOT virtual functions
         on...otherEvent)();
         ...
     };
 ```
+
+# Layout and visual components
+TODO
